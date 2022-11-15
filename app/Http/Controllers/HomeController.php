@@ -10,11 +10,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $visi = Setting::first()->visi;
+        $setting = Setting::first();
         $misi2 = Misi::get();
 
         return view('home', [
-            'visi' => $visi,
+            'setting' => $setting,
             'misi2' => $misi2,
             'title' => ''
         ]);

@@ -142,11 +142,14 @@
                         <li>
                             <a class="smooth-menu" href="{{ route('index') }}">HOME</a>
                         </li>
-                        <li>
-                            <a class="smooth-menu" href="#">PROFIL SEKOLAH</a>
-                        </li>
-                        <li>
-                            <a class="smooth-menu" href="#visi-misi">VISI & MISI</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown">PROFIL SEKOLAH</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="smooth-menu" href="#visi-misi">Visi & Misi</a></li>
+                                <li><a class="smooth-menu" href="#jurusan">Jurusan</a></li>
+                                <li><a class="smooth-menu" href="#sejarah">Sejarah</a></li>
+                                <li><a class="smooth-menu" href="#kontak">Kontak</a></li>
+                            </ul>
                         </li>
                         @guest
                         <li>
@@ -184,9 +187,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 data-animation="animated slideInLeft">BERAKHLAK MULIA</h3>                                                
+                                        <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
                                         <h1 data-animation="animated slideInUp">Berprestasi dan Berwawasan Lingkungan</h1>                                                
-                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">Mulai Membaca</a>                                            
+                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">LIHAT PROFIL SEKOLAH</a>                                            
                                     </div>
                                 </div>
                             </div>
@@ -202,9 +205,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content">
-                                    <h3 data-animation="animated slideInLeft">Educational Goals</h3>                                                
+                                    <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
                                     <h1 data-animation="animated slideInUp">Improve Quality and Have Good Character</h1>                                                
-                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">Mulai Membaca</a>                                            
+                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">LIHAT PROFIL SEKOLAH</a>                                            
                                 </div>
                             </div>
                         </div>
@@ -220,9 +223,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 data-animation="animated slideInLeft">Continue to State Universities</h3>                                                
+                                        <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
                                         <h1 data-animation="animated slideInUp">And Have an Entrepreneurial Spirit</h1>                                                
-                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">Mulai Membaca</a>                                            
+                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">LIHAT PROFIL SEKOLAH</a>                                            
                                     </div>
                                 </div>
                             </div>
@@ -238,9 +241,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content">
-                                    <h3 data-animation="animated slideInLeft">Care and Always</h3>                                                
+                                    <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
                                     <h1 data-animation="animated slideInUp">Take Care of The Environment</h1>                                                
-                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">Mulai Membaca</a>                                            
+                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">LIHAT PROFIL SEKOLAH</a>                                            
                                 </div>
                             </div>
                         </div>
@@ -264,7 +267,7 @@
 <!-- End Hero Banner -->
     
 <!-- Start Visi Misi ============================================= -->
-<div style="position: absolute; z-index: -1; margin-top: -70px;" id="content"></div>
+<div style="position: absolute; z-index: -1; margin-top: -70px;"></div>
 <div class="featured-courses-area left-details default-padding" id="visi-misi">
     <div class="container">
         <div class="row">
@@ -290,7 +293,7 @@
                         </h2>
                         <h3>Visi</h3>
                         <ul>
-                            <li><i class="fas fa-check-double"></i><span>{{ $visi }}</span></li>
+                            <li><i class="fas fa-check-double"></i><span>{{ $setting->visi }}</span></li>
                         </ul>
                         <h3>Misi</h3>
                         <ul>
@@ -310,57 +313,255 @@
 </div>
 <!-- End Visi Misi -->
 
-<footer class="bg-fixed shadow dark-hard lazy">
-    {{-- <div class="container">
+
+<!-- Start Jurusan ============================================= -->
+<div style="position: absolute; z-index: -1; margin-top: -70px;"></div>
+<div class="featured-courses-area left-details default-padding" id="jurusan">
+    <div class="container">
         <div class="row">
-            <div class="f-items">
-                <div class="col-md-4 item">
-                    <div class="f-item">
-                        <img src="{{ asset('Logo.png') }}" style="width: 4.8rem; padding-top: 1rem" alt="Logo SMA Advent Kaima">
-                        <label class="smooth-menu" id="nama" style="font-size: 2.5rem; color: white">{{ strtoupper(config('app.name')) }}</label>
-                        <p>SMK ADVENT KAIMA adalah salah satu satuan pendidikan dengan jenjang SMK di Kaima, Kec. Kauditan, Kab. Minahasa Utara, Sulawesi Utara. Dalam menjalankan kegiatannya, SMK ADVENT KAIMA berada di bawah naungan Kementerian Pendidikan dan Kebudayaan.</p>     
+            <div class="site-heading text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>Jurusan</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner-area content-top-heading less-paragraph text-normal">
+        <div id="bootcarousel2" class="carousel slide animate_text carousel-fade" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner text-light carousel-zoom">
+                <div class="item active">
+                    <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-04.webp)"></div>
+                    <div class="box-table shadow dark">
+                        <div class="box-cell breadcrumb-area shadow text-center bg-fixed text-light">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="content">
+                                            <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
+                                            <h1 data-animation="animated slideInUp">Otomotif</h1>                                     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 item pull-right">
-                    <div class="f-item address">
-                        <h4>Alamat</h4>
+                <div class="item ">
+                    <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-1.webp)"></div>
+                    <div class="box-table shadow dark">
+                        <div class="box-cell breadcrumb-area shadow  text-center bg-fixed text-light">
+                            <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="content">
+                                        <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
+                                        <h1 data-animation="animated slideInUp">Keperawatan</h1>                                                
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-1.webp)"></div>
+                    <div class="box-table shadow dark">
+                        <div class="box-cell breadcrumb-area shadow  text-center bg-fixed text-light">
+                            <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="content">
+                                        <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
+                                        <h1 data-animation="animated slideInUp">Teknik Jaringan Komputer</h1>                                                
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Wrapper for slides -->
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#bootcarousel2" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#bootcarousel2" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- End Jurusan -->
+
+<!-- Start Sejarah ============================================= -->
+<div style="position: absolute; z-index: -1; margin-top: -70px;"></div>
+<div class="featured-courses-area left-details default-padding" id="sejarah">
+    <div class="container">
+        <div class="row">
+            <div class="site-heading text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>Sejarah Sekolah</h2>
+                </div>
+            </div>
+        </div>
+        <div style="font-size: 1.5rem; line-height: 1.7; text-align: justify">
+            <div class="row" style="margin-bottom: 2rem">
+                <div class="featured-courses-carousel owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="col-md-6">
+                            <img src="{{ asset('assets/sejarah/Sejarah 4.png') }}" alt="Sejarah">
+                        </div>
+                        <div class="col-md-6 info">
+                            <div style="margin-bottom: 1.5rem">Begitu besarnya kerinduan GMAHK jemaat Kaima dalam mengembangkan pendidikan yang ada, setelah berdirinya Taman Kanak-kanak, Sekolah Dasar, Sekolah Lanjutan Tingkat Pertama, Sekolah Menengah Atas, maka berdasarkan keputusan Komite jemaat tanggal: 13 April 2013 dengan nomor keputusan: 024/GMAHK-Kaima/IV/2013, maka didirikanlah Sekolah Menengah Kejuruan (SMK) Advent Kaima dengan tujuan menjaring orang-orang muda untuk dilatih ketrampilannya dan mempersiapkan jiwa-jiwa untuk dibawah kepada TUHAN lewat baptisan kudus.</div>
+                            <div>
+                                <div style="margin-bottom: 1.5rem">Program Keahlian yang dibuka di SMK Advent Kaima</div>
+                                <ul>
+                                    <li><i class="fas fa-check-double"></i><span>Keperawatan</span></li>
+                                    <li><i class="fas fa-check-double"></i><span>Teknik Otomotif Kendaraan Ringan</span></li>
+                                    <li><i class="fas fa-check-double"></i><span>Teknik Komputer dan Jaringan</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 2rem">
+                <div class="featured-courses-carousel owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="col-md-6 info">
+                            <div style="margin-bottom: 1.5rem">Sesuai dengan Ijin beroperasinya Sekolah SMK Advent Kaima yang dikeluarkan pemerintah berturut-turut</div>
+                            <ul>
+                                <li><i class="fas fa-check-double"></i><span>Ijin Prinsip berupa REKOMENDASI dari Kepala Dinas Pendidikan Pemuda dan Olahraga Kabupaten Minahasa utara Nomor: 800/DPPO/0920/VIII/2013 tertanggal 15 Agustus 2013.</span></li>
+                                <li><i class="fas fa-check-double"></i><span>Ijin Operasional SMK Advent Kaima dari Kepala Dinas Pendidikan Pemuda dan Olahraga Kab. Minahasa utara dengan nomor: 800/DPPO/1388a/XII/2013 tertanggal 20 Desember 2013 maka berjalanlah SMK Advent Kaima dan pada tanggal: 7 Mei 2014 Kementerian Pendidikan dan Kebudayaan Republik Indonesia mensahkan berjalannya Sekolah ini dengan mengeluarkan Nomor Pokok Sekoah Nasional (NPSN0 yaitu 69787183.</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{{ asset('assets/sejarah/Sejarah 5.png') }}" alt="Sejarah">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 2rem">
+                <div class="item">
+                    <div class="col-md-12">Pada tahun 2015 Pemerintah Kab. Minahasa Utara memberikan bantuan 1 (satu) Ruang Kelas Baru seperti pada foto diatas dengan total anggaran (Rp. 175.000.000). Dan pada tanggal 22 November 2018 sekolah ini di Akreditasi oleh Badan Akreditasi Nasional (BAN) Sekolah Menengah (SM) dengan hasil BAIK. Dalam selang 3 tahun berjalan, SMK Advent Kaima sudah berprestasi antara lain: Juara-1 Tingkat Provinsi Kepala SMK atas nama Drs. Jootje Z. Rumampuk, MA.Ed dan menjadi finalis di tingkat nasional di Jakarta sebagai Kepala SMK Berprestasi yaitu tahun 2015 dan tahun 2016.</div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 2rem">
+                <div class="item">
+                    <div class="col-md-6">
+                        <img src="{{ asset('assets/sejarah/Sejarah 3.jpeg') }}" alt="Sejarah">
+                    </div>
+                    <div class="col-md-6 info">
+                        <div style="margin-bottom: 1.5rem">Perkembangan Sarana Prasarana Sekolah dengan pertolongan Tuhan bantuan dari pemerintah untuk SMK Advent Kaima selama tahun 2020 – 2022</div>
                         <ul>
                             <li>
-                                <i class="fas fas fa-mobile-alt"></i> 
-                                <p>Telepon <span><a href="tel:0218460810">(021) 8460810</a></span></p>
+                                <i class="fas fa-check-double"></i>
+                                <span>Ruang Praktik Teknis Otomotif dan Peralatannya, Tahun 2020 Perletakkan batu pertama dilakukan oleh Ketua GMAHK Daerah Misi Minahasa Utara Bitung: Pdt. Wicliff J. Laoh, M.Min, dan diikuti oleh Hukum Tua Kaima Bpk. Drs. Bernadus Togas, Kepala Dinas Pendidikan Daerah Minut-Bitung: Drs. Ernest Emor, M.Pd, dan mewakili Komite Sekolah Pdt. Nelson Tambani, M.Min, dan terakhir oleh Kepala Sekolah: Drs. Jootje Z. Rumampuk, MA.Ed Ruang Lab. Komputer dan Rehab Ruang Aula dan Ruang Ibadah, Tahun 2021</span>
                             </li>
                             <li>
-                                <i class="fas fa-envelope"></i> 
-                                <p>Email <span><a href="mailto:sman5bks@yahoo.com">sman5bks@yahoo.com</a></span></p>
+                                <i class="fas fa-check-double"></i>
+                                <span>Ruang Kelas Baru 4 ruangan, Ruang Lab. Bahasa dan Perpustakaan – Tahun 2022 Semua hanya oleh karena kasih Tuhan Puji Tuhan</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="row" style="margin-bottom: 2rem">
+                    <div class="col-md-6">
+                        <img src="{{ asset('assets/sejarah/Sejarah 1.jpeg') }}" alt="Sejarah">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{ asset('assets/sejarah/Sejarah 2.jpeg') }}" alt="Sejarah">
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 2rem">
+                    <div class="col-md-6">
+                        <img src="{{ asset('assets/sejarah/Sejarah 6.png') }}" alt="Sejarah">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{ asset('assets/sejarah/Sejarah 7.png') }}" alt="Sejarah">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+<!-- End Sejarah -->
+
+<!-- Start Contact Info ============================================= -->
+<div style="position: absolute; z-index: -1; margin-top: -70px;" id="kontak"></div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="site-heading text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>Kontak</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="f-items">
+                <div class="col-md-6 item">
+                    <div class="f-item">
+                        <h3>Letak Peta</h3>
+                        <div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1994.3171507913742!2d125.0219328!3d1.3958897!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32870fd2c683e499%3A0x9a26f8a1e9a62ab8!2sSMK%20ADVENT%20KAIMA!5e0!3m2!1sid!2sid!4v1668501762806!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                       
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 item">
+                    <div class="f-item address" style="color: #000">
+                        <h3>Alamat</h3>
+                        <ul style="color: #000">
+                            <li>
+                                <i class="fas fas fa-mobile-alt" style="border-color: #000; color: #000"></i> 
+                                <p style="color: #000">Telepon <span><a href="tel:{{ $setting->telepon }}" style="color: #000">{{ $setting->telepon }}</a></span></p>
                             </li>
                             <li>
-                                <i class="fas fa-map"></i> 
-                                <p>Sekolah <span style="text-transform: capitalize !important;">Jl. Gamprit, Jatiwaringin Asri, Pondokgede, Kota Bekasi, Jawa Barat, 17411</span></p>
+                                <i class="fa fa-envelope" style="border-color: #000; color: #000"></i> 
+                                <p style="color: #000">Email <span><a href="mailto:{{ $setting->email }}" style="color: #000">{{ $setting->email }}</a></span></p>
+                            </li>
+                            <li>
+                                <i class="fa fa-map" style="border-color: #000; color: #000"></i> 
+                                <p style="color: #000">Sekolah <span style="text-transform: capitalize !important;" style="color: #000">{{ $setting->alamat }}</span></p>
+                            </li>
+                            <li>
+                                <i class="fab fa-facebook-f" style="border-color: #000; color: #000"></i> 
+                                <p style="color: #000">Facebook <span><a href="https://www.facebook.com/Skavenka/" style="text-transform: capitalize !important; color: #000">SMK Advent Kaima "Skavenka"</a></span></p>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
+</footer>
+<!-- End Contact Info -->
+
+<footer class="" style="">
     <!-- Start Footer Bottom -->
     <div class="footer-bottom bg-transparent">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-6">
-                        <p>&copy; Copyright {{ date('Y') }}. All Rights Reserved by <a href="index.html">{{ config('app.name') }}</a></p>
+                        <p style="color: #000">&copy; Copyright 2019 - 2022. All Rights Reserved by <a href="https://sman5kotabekasi.sch.id">SMAN 5 Bekasi</a></p>
                     </div>
                     <div class="col-md-6 text-right link">
                         <ul>
                             <li>
-                                <a>Terms of user</a>
+                                <a style="color: #000">Terms of user</a>
                             </li>
                             <li>
-                                <a>License</a>
+                                <a style="color: #000">License</a>
                             </li>
                             <li>
-                                <a>Support</a>
+                                <a style="color: #000">Support</a>
                             </li>
                         </ul>
                     </div>
