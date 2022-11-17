@@ -8,7 +8,17 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ 'https://eu.ui-avatars.com/api/?name=' . implode('+', explode(' ', $user->nama)) }}" class="img-circle" alt="User Image">
+                {{-- <img src="{{ 'https://eu.ui-avatars.com/api/?name=' . implode('+', explode(' ', $user->nama)) }}" class="img-circle" alt="User Image"> --}}
+                <img 
+                    @if( $user->role == 'Siswa' && $user->siswa->foto )
+                    src="{{ asset('storage/' . $user->siswa->foto) }}"
+                    @elseif( ($user->role == 'Kepala Sekolah' || $user->role == 'Guru' || $user->role == 'Bendahara') && $user->guru->foto )
+                    src="{{ asset('storage/' . $user->guru->foto) }}"
+                    @else
+                    src="{{ 'https://eu.ui-avatars.com/api/?name=' . implode('+', explode(' ', $user->nama)) }}" 
+                    @endif
+                    class="img-circle" alt="User Image"
+                >
             </div>
             <div class="pull-left info">
                 <p>{{ $user->nama }}</p>

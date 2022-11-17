@@ -33,15 +33,16 @@ class PengumumanController extends Controller
             'deskripsi' => 'required'
         ]);
         
-        if( $request->file('file') ) {
-            $nama_file = $request->judul . '.pdf';
+        $file = $request->file('file');
+        if( $file ) {
+            $nama_file = $request->judul . '.' . $file->extension();
             $request->file('file')->storeAs('pengumuman/', $nama_file );
         }
 
         Pengumuman::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'file' => $request->file('file') ? 'pengumuman/' . $nama_file : NULL
+            'file' => $file ? 'pengumuman/' . $nama_file : NULL
         ]);
         
         return redirect()->route('admin.pengumuman.index')->with('status', 'Pengumuman berhasil ditambahkan!');
@@ -62,17 +63,18 @@ class PengumumanController extends Controller
             'deskripsi' => 'required'
         ]);
 
-        if( $request->file('file') ) {
+        $file = $request->file('file');
+        if( $file ) {
             if( $pengumuman->file ) Storage::delete($pengumuman->file);
 
-            $nama_file = $request->judul . '.pdf';
-            $request->file('file')->storeAs('pengumuman/', $nama_file );
+            $nama_file = $request->judul . '.' . $file->extension();
+            $file->storeAs('pengumuman/', $nama_file );
         }
 
         $pengumuman->update([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'file' => $request->file('file') ? 'pengumuman/' . $nama_file : $pengumuman->file
+            'file' => $file ? 'pengumuman/' . $nama_file : $pengumuman->file
         ]);
 
         return redirect()->route('admin.pengumuman.index')->with('status', 'Pengumuman berhasil diupdate!');

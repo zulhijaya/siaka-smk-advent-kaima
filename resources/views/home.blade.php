@@ -189,7 +189,7 @@
                                     <div class="content">
                                         <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
                                         <h1 data-animation="animated slideInUp">Berprestasi dan Berwawasan Lingkungan</h1>                                                
-                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">LIHAT PROFIL SEKOLAH</a>                                            
+                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md smooth-menu" href="#sejarah">LIHAT PROFIL SEKOLAH</a>                                            
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +207,7 @@
                                 <div class="content">
                                     <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
                                     <h1 data-animation="animated slideInUp">Improve Quality and Have Good Character</h1>                                                
-                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">LIHAT PROFIL SEKOLAH</a>                                            
+                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md smooth-menu" href="#sejarah">LIHAT PROFIL SEKOLAH</a>                                            
                                 </div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                                     <div class="content">
                                         <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
                                         <h1 data-animation="animated slideInUp">And Have an Entrepreneurial Spirit</h1>                                                
-                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">LIHAT PROFIL SEKOLAH</a>                                            
+                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md smooth-menu" href="#sejarah">LIHAT PROFIL SEKOLAH</a>                                            
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +243,7 @@
                                 <div class="content">
                                     <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
                                     <h1 data-animation="animated slideInUp">Take Care of The Environment</h1>                                                
-                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#content">LIHAT PROFIL SEKOLAH</a>                                            
+                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md smooth-menu" href="#sejarah">LIHAT PROFIL SEKOLAH</a>                                            
                                 </div>
                             </div>
                         </div>
@@ -550,7 +550,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-6">
-                        <p style="color: #000">&copy; Copyright 2019 - 2022. All Rights Reserved by <a href="https://sman5kotabekasi.sch.id">SMAN 5 Bekasi</a></p>
+                        <p style="color: #000">&copy; Copyright {{ date('Y') }}. All Rights Reserved by <a href="{{ route('index') }}">{{ config('app.name') }}</a></p>
                     </div>
                     <div class="col-md-6 text-right link">
                         <ul>

@@ -112,70 +112,12 @@
                         </table>
                     </div>
                 </div>
+                @if( auth()->user()->role == 'Administrator' )
                 <div>
                     <div class="box-header">
                         <h3 class="box-title">Berkas</h3>
                     </div>
                     <div class="box-body">
-                        {{-- <table class="table table-bordered">
-                            <tr>
-                                <td>Nama</td>
-                                <td>:</td>
-                                <td>{{ $siswa->user->nama }}</td>
-                            </tr>
-                            <tr>
-                                <td>NIS</td>
-                                <td>:</td>
-                                <td>{{ $siswa->user->nomor_identitas }}</td>
-                            </tr>
-                            <tr>
-                                <td>Tempat, Tanggal Lahir</td>
-                                <td>:</td>
-                                <td>{{ $siswa->tempat_lahir }}, {{ Carbon\Carbon::createFromFormat('Y-m-d', $siswa->tanggal_lahir)
-                                    ->isoFormat('D MMMM Y'); }}</td>
-                            </tr>
-                            <tr>
-                                <td>Jenis Kelamin</td>
-                                <td>:</td>
-                                <td>{{ $siswa->jenis_kelamin }}</td>
-                            </tr>
-                            <tr>
-                                <td>Agama</td>
-                                <td>:</td>
-                                <td>{{ $siswa->agama }}</td>
-                            </tr>
-                            <tr>
-                                <td>Alamat</td>
-                                <td>:</td>
-                                <td>{{ $siswa->alamat }}</td>
-                            </tr>
-                            <tr>
-                                <td>No HP</td>
-                                <td>:</td>
-                                <td>{{ $siswa->no_hp }}</td>
-                            </tr>
-                            <tr>
-                                <td>Nama Ayah</td>
-                                <td>:</td>
-                                <td>{{ $siswa->nama_ayah }}</td>
-                            </tr>
-                            <tr>
-                                <td>Nama Ibu</td>
-                                <td>:</td>
-                                <td>{{ $siswa->nama_ibu }}</td>
-                            </tr>
-                            <tr>
-                                <td>Pekerjaan Ayah</td>
-                                <td>:</td>
-                                <td>{{ $siswa->pekerjaan_ayah }}</td>
-                            </tr>
-                            <tr>
-                                <td>Pekerjaan Ibu</td>
-                                <td>:</td>
-                                <td>{{ $siswa->pekerjaan_ibu }}</td>
-                            </tr>
-                            <tr>
-                        </table> --}}
                         <div class="btn-toolbar">
                             <a href="{{ asset('storage/' . $siswa->berkas->ijazah) }}" target="_blank">
                                 <button type="button" class="btn btn-sm btn-default" style="margin-right: 0.55rem">FC Ijazah</button>
@@ -194,6 +136,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>
