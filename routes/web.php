@@ -147,8 +147,9 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
 
     Route::prefix('tagihan')->name('tagihan.')->group(function() {
         Route::get('', [TagihanController::class, 'index'])->name('index');
-        Route::post('', [TagihanController::class, 'simpan'])->name('simpan');
-        Route::delete('{tagihan}', [TagihanController::class, 'destroy'])->name('destroy');
+        Route::get('kelas/{kelas}', [TagihanController::class, 'daftarSiswa'])->name('kelas.daftar-siswa');
+        Route::get('siswa/{siswa}/edit', [TagihanController::class, 'edit'])->name('siswa.edit');
+        Route::put('{siswa}', [TagihanController::class, 'update'])->name('update');
     });
 
     Route::prefix('visi-misi')->name('visi-misi.')->group(function() {

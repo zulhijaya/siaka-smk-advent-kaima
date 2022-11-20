@@ -17,13 +17,13 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Data Tagihan Siswa</h3>
-                    <div class="pull-right">
+                    <h3 class="box-title">Data Tagihan</h3>
+                    {{-- <div class="pull-right">
                         <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#default">Tambah Tagihan</button>
-                    </div>
+                    </div> --}}
                 </div>
                 
-                <div class="box-body">
+                {{-- <div class="box-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -52,12 +52,39 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div> --}}
+                <div class="box-body">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Tingkat</th>
+                                <th>Pilihan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach( $kelas2 as $kelas )
+                            <tr>
+                                <td>{{ $loop->iteration }}.</td>
+                                <td>Kelas {{ $kelas->tingkat }}</td>
+                                <td>
+                                    <div class="btn-toolbar">
+                                        <a href="{{ route('admin.tagihan.kelas.daftar-siswa', $kelas->id) }}">
+                                            <button type="button" class="btn btn-xs btn-primary"
+                                                style="margin-right: 0.55rem">Lihat</button>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="default">
+    {{-- <div class="modal fade" id="default">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -90,7 +117,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 </section>
 @endsection
 

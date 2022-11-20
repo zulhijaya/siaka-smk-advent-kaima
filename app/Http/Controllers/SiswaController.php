@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class SiswaController extends Controller
 {
-    public function calonSiswa() 
+    public function calonSiswa()
     {
         $siswa2 = Siswa::with('user')->where('aktif', false)->get();
 
@@ -26,7 +26,7 @@ class SiswaController extends Controller
         ]);
     }
 
-    public function siswaAktif() 
+    public function siswaAktif()
     {
         $siswa2 = Siswa::with('user', 'jurusan.kelas')->where('aktif', true)->get();
 
@@ -36,7 +36,7 @@ class SiswaController extends Controller
         ]);
     }
 
-    public function tambah() 
+    public function tambah()
     {
         $jurusan2 = Jurusan::get();
 
@@ -46,8 +46,8 @@ class SiswaController extends Controller
         ]);
     }
 
-    public function simpan(Request $request) 
-    {   
+    public function simpan(Request $request)
+    {
         $request->validate([
             'nama' => 'required',
             'jenis_kelamin' => 'required',
@@ -153,7 +153,7 @@ class SiswaController extends Controller
             'ktp_ortu' => 'calon-siswa/berkas/' . $request->nama . '/FC KTP Orang Tua.' . $ktp_ortu->extension(),
             'kip' => $kip ? 'calon-siswa/berkas/' . $request->nama . '/FC Kartu Indonesia Pintar.' . $kip->extension() : NULL,
         ]);
-        
+
         return redirect()->route(auth()->user() ? 'admin.siswa.calon-siswa' : 'calon-siswa.tambah')->with('status', 'Calon siswa berhasil ditambahkan!');
     }
 
@@ -265,7 +265,7 @@ class SiswaController extends Controller
             'jurusan_dipilih' => $request->jurusan_dipilih,
             'foto' => $foto ? 'foto/siswa/' . $nama_foto : $siswa->foto,
         ]);
-    
+
         $ijazah = $request->file('ijazah');
         if( $ijazah ) {
             Storage::delete($siswa->berkas->ijazah);
@@ -300,7 +300,7 @@ class SiswaController extends Controller
             'ktp_ortu' => $ktp_ortu ? 'calon-siswa/berkas/' . $request->nama . '/' . $nama_ktp_ortu : $siswa->berkas->ktp_ortu,
             'kip' => $kip ? 'calon-siswa/berkas/' . $request->nama . '/' . $nama_kip : $siswa->berkas->kip,
         ]);
-        
+
         return redirect()->route($siswa->aktif ? 'admin.siswa.siswa-aktif' : 'admin.siswa.calon-siswa')->with('status', 'Data siswa berhasil diupdate!');
     }
 
@@ -326,10 +326,10 @@ class SiswaController extends Controller
         return redirect()->route($aktif ? 'admin.siswa.siswa-aktif' : 'admin.siswa.calon-siswa')->with('status', 'Siswa berhasil dihapus!');
     }
 
-    public function jadwalMapel() 
+    public function jadwalMapel()
     {
         $jadwal2 = auth()->user()->load('siswa.jurusan.jadwal2.mapel', 'siswa.jurusan.jadwal2.guru.user')->siswa->jurusan->jadwal2;
-        
+
         return view('admin.siswa.jadwal-mapel', [
             'jadwal2' =>  $jadwal2,
             'title' => 'Jadwal Mapel'
@@ -362,10 +362,7 @@ class SiswaController extends Controller
 
     public function tagihan()
     {
-        $tagihan2 = auth()->user()->load('siswa.tagihan2')->siswa->tagihan2;
-
         return view('admin.siswa.tagihan', [
-            'tagihan2' => $tagihan2,
             'title' => 'Tagihan'
         ]);
     }
@@ -373,7 +370,7 @@ class SiswaController extends Controller
     public function daftarSiswaBaru()
     {
         $pesan = Setting::first()->pesan_sukses_mendaftar;
-        
+
         return view('daftar-siswa-baru', [
             'pesan' => $pesan,
             'title' => 'Pendaftaran Calon Siswa Baru'

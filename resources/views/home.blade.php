@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from sman5kotabekasi.sch.id/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Nov 2022 04:40:06 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <style>
         img.lazy {
@@ -84,7 +81,22 @@
     <link rel="icon" href="{{ asset('landing/wp-content/uploads/2022/04/cropped-favicon-192x192.png" sizes="192x192') }}"/>
     <link rel="apple-touch-icon" href="{{ asset('landing/wp-content/uploads/2022/04/cropped-favicon-180x180.png') }}"/>
     <meta name="msapplication-TileImage" content="https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/cropped-favicon-270x270.png"/>
-    <style type="text/css"></style>
+    <style type="text/css">
+        #nama { 
+            font-size: 2rem; 
+        }
+
+        @media (min-width: 768px) {
+            #nama { 
+                font-size: 2.5rem; 
+            }
+
+            #logo {
+                width: 4.8rem; 
+                padding-bottom: 1rem;
+            }
+        }
+    </style>
 
     <title>{{ strtoupper(config('app.name')) }}</title>
 </head>
@@ -119,16 +131,21 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="{{ route('index') }}">
-                    <img src="{{ asset('Logo.png') }}" style="width: 4.8rem; padding-bottom: 1rem" alt="Logo SMA Advent Kaima">
-                    <label class="smooth-menu" id="nama" style="font-size: 2.5rem; color: white; font-weight: 500">{{ strtoupper(config('app.name')) }}</label>
+                    <img id="logo" src="{{ asset('Logo.png') }}" style="" alt="Logo SMA Advent Kaima">
+                    <label class="smooth-menu" id="nama" style="font-weight: 500">{{ strtoupper(config('app.name')) }}</label>
                 </a>
             </div>
             <script>
                 window.onscroll = function() {
                     if (document.body.scrollTop > 35 || document.documentElement.scrollTop > 35) {
-                        document.getElementById('nama').style.color = '#000000';
+                        document.getElementById('nama').style.color = '#000';
                     } else {
-                        document.getElementById('nama').style.color = '#ffffff';
+                        if( window.innerWidth >= 768 ) {
+                            document.getElementById('nama').style.color = '#fff';
+                        } else {
+                            document.getElementById('nama').style.color = '#000';
+                        }
+                        // document.getElementById('nama').style.color = '#ffffff';
                     }
                 };
             </script>
@@ -180,16 +197,15 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner text-light carousel-zoom">
             <div class="item active">
-                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-04.webp)"></div>
+                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url({{ asset('assets/home/1.jpg') }})"></div>
                 <div class="box-table shadow dark">
                     <div class="box-cell breadcrumb-area shadow text-center bg-fixed text-light">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
-                                        <h1 data-animation="animated slideInUp">Berprestasi dan Berwawasan Lingkungan</h1>                                                
-                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md smooth-menu" href="#sejarah">LIHAT PROFIL SEKOLAH</a>                                            
+                                        <h3 data-animation="animated slideInLeft">BERAKHLAK MULIA</h3>                                                
+                                        <h1 data-animation="animated slideInUp">Berprestasi dan Berwawasan Lingkungan</h1>                                                                         
                                     </div>
                                 </div>
                             </div>
@@ -198,16 +214,15 @@
                 </div>
             </div>
             <div class="item ">
-                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-04.webp)"></div>
+                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url({{ asset('assets/home/2.jpg') }})"></div>
                 <div class="box-table shadow dark">
                     <div class="box-cell breadcrumb-area shadow  text-center bg-fixed text-light">
                         <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content">
-                                    <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
-                                    <h1 data-animation="animated slideInUp">Improve Quality and Have Good Character</h1>                                                
-                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md smooth-menu" href="#sejarah">LIHAT PROFIL SEKOLAH</a>                                            
+                                    <h3 data-animation="animated slideInLeft">EDUCATIONAL GOALS</h3>                                                
+                                    <h1 data-animation="animated slideInUp">Improve Quality and Have Good Character</h1>                                                                    
                                 </div>
                             </div>
                         </div>
@@ -216,16 +231,15 @@
                 </div>
             </div>
             <div class="item ">
-                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-3.webp)"></div>
+                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url({{ asset('assets/home/3.JPG') }})"></div>
                 <div class="box-table shadow dark">
                     <div class="box-cell breadcrumb-area shadow  text-center bg-fixed text-light">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
-                                        <h1 data-animation="animated slideInUp">And Have an Entrepreneurial Spirit</h1>                                                
-                                        <a data-animation="animated slideInUp" class="btn btn-light border btn-md smooth-menu" href="#sejarah">LIHAT PROFIL SEKOLAH</a>                                            
+                                        <h3 data-animation="animated slideInLeft">CONTINUE TO STATE UNIVERSITIES</h3>                                                
+                                        <h1 data-animation="animated slideInUp">And Have an Entrepreneurial Spirit</h1>                                                                                 
                                     </div>
                                 </div>
                             </div>
@@ -234,16 +248,15 @@
                 </div>
             </div>
             <div class="item ">
-                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-1.webp)"></div>
+                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url({{ asset('assets/home/4.jpg') }})"></div>
                 <div class="box-table shadow dark">
                     <div class="box-cell breadcrumb-area shadow  text-center bg-fixed text-light">
                         <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content">
-                                    <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
-                                    <h1 data-animation="animated slideInUp">Take Care of The Environment</h1>                                                
-                                    <a data-animation="animated slideInUp" class="btn btn-light border btn-md smooth-menu" href="#sejarah">LIHAT PROFIL SEKOLAH</a>                                            
+                                    <h3 data-animation="animated slideInLeft">CARE AND ALWAYS</h3>                                                
+                                    <h1 data-animation="animated slideInUp">Take Care of The Environment</h1>                                                   
                                 </div>
                             </div>
                         </div>
@@ -276,15 +289,11 @@
                 <div class="item">
                     <div class="col-md-5">
                         <div class="thumb">
-                            <img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20600'%3E%3C/svg%3E" data-src="https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-3.webp" alt="">
-                            <div class="live-view">
-                                <a href="{{ asset('wp-content/uploads/2022/04/visi-misi.jpg') }}" class="item popup-link">
-                                    <i class="fa fa-camera"></i>
-                                </a>
-                                <a class="popup-youtube" href="https://www.youtube.com/watch?v=ZzCpb-eaodE">
-                                    <i class="fa fa-video"></i>
-                                </a>
-                            </div>
+                            <img 
+                                class="lazy" 
+                                {{-- src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20600'%3E%3C/svg%3E"  --}}
+                                src="{{ asset('assets/home/3.jpg') }}" alt=""
+                            >
                         </div>
                     </div>
                     <div class="col-md-7 info">
@@ -331,15 +340,21 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner text-light carousel-zoom">
                 <div class="item active">
-                    <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-04.webp)"></div>
-                    <div class="box-table shadow dark">
+                    <div 
+                        class="slider-thumb bg-fixed lazy" 
+                        style="background-color: #3b82f6" 
+                        {{-- data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-04.webp)" --}}
+                    >
+                    </div>
+                    <div class="box-table shadow">
                         <div class="box-cell breadcrumb-area shadow text-center bg-fixed text-light">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="content">
-                                            <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
-                                            <h1 data-animation="animated slideInUp">Otomotif</h1>                                     
+                                            <h3 data-animation="animated slideInLeft">TKJ</h3>                                                
+                                            <h1 data-animation="animated slideInUp">Teknik Jaringan Komputer</h1>       
+                                            <p data-animation="animated slideInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a adipisci molestias nesciunt maxime quidem cumque possimus fugiat nobis culpa eius, vitae sapiente, consectetur soluta amet, quisquam repudiandae. Officiis impedit aperiam earum maxime, deleniti odio officia reiciendis. Distinctio sint veniam est dolores, explicabo temporibus blanditiis necessitatibus debitis perferendis libero quod!</p>                              
                                         </div>
                                     </div>
                                 </div>
@@ -348,15 +363,22 @@
                     </div>
                 </div>
                 <div class="item ">
-                    <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-1.webp)"></div>
-                    <div class="box-table shadow dark">
-                        <div class="box-cell breadcrumb-area shadow  text-center bg-fixed text-light">
+                    <div 
+                        class="slider-thumb bg-fixed lazy" 
+                        style="background-color: #ffffff" 
+                        {{-- data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-1.webp)" --}}
+                    >
+                    </div>
+                    <div class="box-table shadow"
+                    style="background-color: #ffffff" >
+                        <div class="box-cell breadcrumb-area shadow text-center bg-fixed text-dark">
                             <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
-                                        <h1 data-animation="animated slideInUp">Keperawatan</h1>                                                
+                                        <h3 style="color: black" data-animation="animated slideInLeft"></h3>                                                
+                                        <h1 style="color: black" data-animation="animated slideInUp">Keperawatan</h1>      
+                                        <p style="color: black" data-animation="animated slideInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a adipisci molestias nesciunt maxime quidem cumque possimus fugiat nobis culpa eius, vitae sapiente, consectetur soluta amet, quisquam repudiandae. Officiis impedit aperiam earum maxime, deleniti odio officia reiciendis. Distinctio sint veniam est dolores, explicabo temporibus blanditiis necessitatibus debitis perferendis libero quod!</p>                                                       
                                     </div>
                                 </div>
                             </div>
@@ -365,15 +387,21 @@
                     </div>
                 </div>
                 <div class="item ">
-                    <div class="slider-thumb bg-fixed lazy" style="" data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-1.webp)"></div>
-                    <div class="box-table shadow dark">
+                    <div 
+                        class="slider-thumb bg-fixed lazy" 
+                        style="background-color: #f97316" 
+                        {{-- data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-1.webp)" --}}
+                    >
+                    </div>
+                    <div class="box-table shadow">
                         <div class="box-cell breadcrumb-area shadow  text-center bg-fixed text-light">
                             <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 data-animation="animated slideInLeft">{{ config('app.name') }}</h3>                                                
-                                        <h1 data-animation="animated slideInUp">Teknik Jaringan Komputer</h1>                                                
+                                        <h3 data-animation="animated slideInLeft">TKR</h3>                                                
+                                        <h1 data-animation="animated slideInUp">Teknik Kendaraan Ringan</h1>                      
+                                        <p data-animation="animated slideInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a adipisci molestias nesciunt maxime quidem cumque possimus fugiat nobis culpa eius, vitae sapiente, consectetur soluta amet, quisquam repudiandae. Officiis impedit aperiam earum maxime, deleniti odio officia reiciendis. Distinctio sint veniam est dolores, explicabo temporibus blanditiis necessitatibus debitis perferendis libero quod!</p>         
                                     </div>
                                 </div>
                             </div>

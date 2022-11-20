@@ -18,52 +18,38 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Data Kelas</h3>
-                    @if( auth()->user()->role == 'Administrator' )
+                    <h3 class="box-title">Daftar Siswa</h3>
                     <div class="pull-right">
-                        <a href="{{ route('admin.kelas.tambah') }}">
-                            <button type="button" class="btn btn-block btn-primary">Tambah Data</button>
+                        <a href="{{ route('admin.tagihan.index') }}">
+                            <button type="button" class="btn-sm btn-primary">Kembali</button>
                         </a>
                     </div>
-                    @endif
                 </div>
 
                 <div class="box-body">
-                    <table class="table table-bordered table-striped">
+                    <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Tingkat</th>
-                                <th>Wali Kelas</th>
-                                <th>Jumlah Siswa</th>
+                                <th>NIS</th>
+                                <th>Nama</th>
+                                <th>Total</th>
                                 <th>Pilihan</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach( $kelas2 as $kelas )
+                            @foreach( $siswa2 as $siswa )
                             <tr>
                                 <td>{{ $loop->iteration }}.</td>
-                                <td>{{ $kelas->tingkat }}</td>
-                                <td>@if( $kelas->guru ) {{ $kelas->guru->user->nama }} @endif</td>
-                                <td>{{ $kelas->jurusan2->sum('siswa2_count') }}</td>
+                                <td>{{ $siswa->user->nomor_identitas }}</td>
+                                <td>{{ $siswa->user->nama }}</td>
+                                <td>@if( $siswa->tagihan ) Rp{{ number_format($siswa->tagihan->total, 0, ',', '.') }} @else 0 @endif</td>
                                 <td>
                                     <div class="btn-toolbar">
-                                        <a href="{{ route('admin.kelas.detail', $kelas->id) }}">
+                                        <a href="{{ route('admin.tagihan.siswa.edit', $siswa->id) }}">
                                             <button type="button" class="btn btn-xs btn-primary"
-                                                style="margin-right: 0.55rem">Detail</button>
-                                        </a>
-                                        @if( auth()->user()->role == 'Administrator' )
-                                        <a href="{{ route('admin.kelas.edit', $kelas->id) }}">
-                                            <button type="button" class="btn btn-xs btn-warning"
                                                 style="margin-right: 0.55rem">Edit</button>
                                         </a>
-                                        <form action="{{ route('admin.kelas.destroy', $kelas->id) }}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-xs btn-danger"
-                                                onclick="return confirm('Hapus kelas?')">Hapus</button>
-                                        </form>
-                                        @endif
                                     </div>
                                 </td>
                             </tr>
@@ -81,4 +67,9 @@
 <script src="{{ asset('adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+<script>
+    $(function () {
+        $('#example1').DataTable()
+    })
+</script>
 @endpush

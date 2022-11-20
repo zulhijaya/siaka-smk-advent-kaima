@@ -32,9 +32,9 @@ class Siswa extends Model
         return $this->hasMany(Absensi::class, 'id_siswa');
     }
 
-    public function tagihan2()
+    public function tagihan()
     {
-        return $this->hasMany(Tagihan::class, 'id_siswa');
+        return $this->hasOne(Tagihan::class, 'id_siswa');
     }
 
     public function berkas()

@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{ route('index') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">{{ explode(' ', config('app.name'))[0] }}</span>
         <!-- logo for regular state and mobile devices -->
@@ -21,13 +21,13 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img 
+                        <img
                             @if( $user->role == 'Siswa' && $user->siswa->foto )
                             src="{{ asset('storage/' . $user->siswa->foto) }}"
                             @elseif( ($user->role == 'Kepala Sekolah' || $user->role == 'Guru' || $user->role == 'Bendahara') && $user->guru->foto )
                             src="{{ asset('storage/' . $user->guru->foto) }}"
                             @else
-                            src="{{ 'https://eu.ui-avatars.com/api/?name=' . implode('+', explode(' ', $user->nama)) }}" 
+                            src="{{ 'https://eu.ui-avatars.com/api/?name=' . implode('+', explode(' ', $user->nama)) }}"
                             @endif
                             class="user-image" alt="User Image"
                         >
@@ -37,13 +37,13 @@
                         <!-- User image -->
                         <li class="user-header">
                             {{-- <img src="{{ 'https://eu.ui-avatars.com/api/?name=' . implode('+', explode(' ', $user->nama)) }}" class="img-circle" alt="User Image"> --}}
-                            <img 
+                            <img
                                 @if( $user->role == 'Siswa' && $user->siswa->foto )
                                 src="{{ asset('storage/' . $user->siswa->foto) }}"
                                 @elseif( ($user->role == 'Kepala Sekolah' || $user->role == 'Guru' || $user->role == 'Bendahara') && $user->guru->foto )
                                 src="{{ asset('storage/' . $user->guru->foto) }}"
                                 @else
-                                src="{{ 'https://eu.ui-avatars.com/api/?name=' . implode('+', explode(' ', $user->nama)) }}" 
+                                src="{{ 'https://eu.ui-avatars.com/api/?name=' . implode('+', explode(' ', $user->nama)) }}"
                                 @endif
                                 class="img-circle" alt="User Image"
                             >
