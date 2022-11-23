@@ -35,6 +35,9 @@
                         <dt>Email :</dt>
                         <dd>{{ $setting->email }}</dd>
                         <br>
+                        <dt>Izinikan siswa akses rapor :</dt>
+                        <dd>@if( $setting->izinkan_siswa_akses_rapor ) Ya @else Tidak @endif</dd>
+                        <br>
                         <dt>Pesan setelah siswa sukses mendaftar :</dt>
                         <dd>{{ $setting->pesan_sukses_mendaftar }}</dd>
                     </dl>

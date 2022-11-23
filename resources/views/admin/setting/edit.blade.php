@@ -36,6 +36,14 @@
                             <input type="email" class="form-control" name="email" id="email" value="{{ $setting->email }}">
                             @error('email') <span class="help-block">{{ $message }}</span> @enderror
                         </div>
+                        <div class="form-group @error('izinkan_siswa_akses_rapor') has-error @enderror">
+                            <label for="izinkan_siswa_akses_rapor">Izinkan siswa akses rapor</label>
+                            <select class="form-control" name="izinkan_siswa_akses_rapor" id="izinkan_siswa_akses_rapor">
+                                <option value="1" @if( $setting->izinkan_siswa_akses_rapor ) selected @endif>Ya</option>
+                                <option value="0" @if( !$setting->izinkan_siswa_akses_rapor ) selected @endif>Tidak</option>
+                            </select>
+                            @error('izinkan_siswa_akses_rapor') <span class="help-block">{{ $message }}</span> @enderror
+                        </div>
                         <div class="form-group @error('pesan_sukses_mendaftar') has-error @enderror">
                             <label for="pesan_sukses_mendaftar">Pesan setelah siswa sukses mendaftar</label>
                             <textarea class="form-control" name="pesan_sukses_mendaftar" id="pesan_sukses_mendaftar" rows="5">{{ $setting->pesan_sukses_mendaftar }}</textarea>

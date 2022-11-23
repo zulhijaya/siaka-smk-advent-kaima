@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('telepon')->nullable();
             // $table->string('facebook')->nullable();
             $table->text('visi')->nullable();
+            $table->boolean('izinkan_siswa_akses_rapor')->default(0);
             $table->text('pesan_sukses_mendaftar')->nullable();
             $table->timestamps();
         });

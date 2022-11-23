@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-8">
+            <div class="col-md-8">
                 <div class="box-header">
                     <h3 class="box-title">Nilai Mapel</h3>
                 </div>
@@ -105,7 +105,7 @@
                                         $hasil = "minus ". trim(penyebut($nilai));
                                     } else {
                                         $hasil = trim(penyebut($nilai));
-                                    }     		
+                                    }
                                     return $hasil;
                                 }
 
@@ -122,7 +122,7 @@
                                     } else if ($nilai < 200) {
                                         $temp = " Seratus" . penyebut($nilai - 100);
                                     }
-                                    
+
                                     return $temp;
                                 }
                             @endphp
@@ -140,7 +140,7 @@
                     </table>
                 </div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-md-4">
                 <div class="box-header">
                     <h3 class="box-title">Absensi</h3>
                 </div>

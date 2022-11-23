@@ -20,7 +20,7 @@ class SettingController extends Controller
         ]);
     }
 
-    public function edit(Setting $setting) 
+    public function edit(Setting $setting)
     {
         $tahun_ajaran2 = TahunAjaran::get();
 
@@ -52,6 +52,7 @@ class SettingController extends Controller
             'alamat' => $request->alamat,
             'telepon' => $request->telepon,
             'email' => $request->email,
+            'izinkan_siswa_akses_rapor' => $request->izinkan_siswa_akses_rapor,
             'pesan_sukses_mendaftar' => $request->pesan_sukses_mendaftar
         ]);
 

@@ -13,11 +13,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Berakhlak Mulia, Berprestasi, dan Berwawasan Lingkungan">
-    
+
     <script type="text/javascript">
         var templateUrl = {{ asset('landing/wp-content/themes/sman5bekasi.html') }};
     </script>
-    
+
     <meta name="robots" content="max-image-preview:large"/>
     <link rel="dns-prefetch" href="http://s.w.org/"/>
     <script type="text/javascript">
@@ -26,7 +26,7 @@
             "ext": ".png",
             "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/",
             "svgExt": ".svg",
-            "source": { 
+            "source": {
                 "concatemoji":"https:\/\/sman5kotabekasi.sch.id\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.2"
             }
         };
@@ -71,7 +71,7 @@
     <link rel="https://api.w.org/" href="{{ asset('landing/wp-json/index.html') }}"/>
     <link rel="alternate" type="application/json" href="{{ asset('landing/wp-json/wp/v2/pages/9.html') }}"/>
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{ asset('landing/xmlrpc0db0.html?rsd') }}"/>
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{{ asset('landing/wp-includes/wlwmanifest.html') }}"/> 
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{{ asset('landing/wp-includes/wlwmanifest.html') }}"/>
     <meta name="generator" content="WordPress 6.0.2"/>
     <link rel="canonical" href="{{ asset('landing/index.html') }}"/>
     <link rel="shortlink" href="{{ asset('landing/index.html') }}"/>
@@ -82,17 +82,17 @@
     <link rel="apple-touch-icon" href="{{ asset('landing/wp-content/uploads/2022/04/cropped-favicon-180x180.png') }}"/>
     <meta name="msapplication-TileImage" content="https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/cropped-favicon-270x270.png"/>
     <style type="text/css">
-        #nama { 
-            font-size: 2rem; 
+        #nama {
+            font-size: 2rem;
         }
 
         @media (min-width: 768px) {
-            #nama { 
-                font-size: 2.5rem; 
+            #nama {
+                font-size: 2.5rem;
             }
 
             #logo {
-                width: 4.8rem; 
+                width: 4.8rem;
                 padding-bottom: 1rem;
             }
         }
@@ -116,7 +116,7 @@
                             <input class="form-control" placeholder="Search" type="text" name="s" id="searchform" value=""/>
                             <button type="submit">
                                 <i class="fas fa-search"></i>
-                            </button> 
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -150,12 +150,12 @@
                 };
             </script>
             <!-- End Header Navigation -->
-            
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">                        
+                    <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
                         <li>
                             <a class="smooth-menu" href="{{ route('index') }}">HOME</a>
                         </li>
@@ -174,7 +174,7 @@
                         </li>
                         <li>
                             <a class="smooth-menu" href="{{ route('login') }}">LOGIN</a>
-                        </li>   
+                        </li>
                         @else
                         <li>
                             <a class="smooth-menu" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -184,7 +184,7 @@
                     </ul>
                 </form>
             </div>
-                
+
             <!-- /.navbar-collapse -->
         </div>
     </nav>
@@ -204,8 +204,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 data-animation="animated slideInLeft">BERAKHLAK MULIA</h3>                                                
-                                        <h1 data-animation="animated slideInUp">Berprestasi dan Berwawasan Lingkungan</h1>                                                                         
+                                        <h3 data-animation="animated slideInLeft">BERAKHLAK MULIA</h3>
+                                        <h1 data-animation="animated slideInUp">Berprestasi dan Berwawasan Lingkungan</h1>
                                     </div>
                                 </div>
                             </div>
@@ -221,8 +221,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content">
-                                    <h3 data-animation="animated slideInLeft">EDUCATIONAL GOALS</h3>                                                
-                                    <h1 data-animation="animated slideInUp">Improve Quality and Have Good Character</h1>                                                                    
+                                    <h3 data-animation="animated slideInLeft">EDUCATIONAL GOALS</h3>
+                                    <h1 data-animation="animated slideInUp">Improve Quality and Have Good Character</h1>
                                 </div>
                             </div>
                         </div>
@@ -231,15 +231,15 @@
                 </div>
             </div>
             <div class="item ">
-                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url({{ asset('assets/home/3.JPG') }})"></div>
+                <div class="slider-thumb bg-fixed lazy" style="" data-bg="url({{ asset('assets/home/3.jpg') }})"></div>
                 <div class="box-table shadow dark">
                     <div class="box-cell breadcrumb-area shadow  text-center bg-fixed text-light">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 data-animation="animated slideInLeft">CONTINUE TO STATE UNIVERSITIES</h3>                                                
-                                        <h1 data-animation="animated slideInUp">And Have an Entrepreneurial Spirit</h1>                                                                                 
+                                        <h3 data-animation="animated slideInLeft">CONTINUE TO STATE UNIVERSITIES</h3>
+                                        <h1 data-animation="animated slideInUp">And Have an Entrepreneurial Spirit</h1>
                                     </div>
                                 </div>
                             </div>
@@ -255,8 +255,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content">
-                                    <h3 data-animation="animated slideInLeft">CARE AND ALWAYS</h3>                                                
-                                    <h1 data-animation="animated slideInUp">Take Care of The Environment</h1>                                                   
+                                    <h3 data-animation="animated slideInLeft">CARE AND ALWAYS</h3>
+                                    <h1 data-animation="animated slideInUp">Take Care of The Environment</h1>
                                 </div>
                             </div>
                         </div>
@@ -278,7 +278,7 @@
     </div>
 </div>
 <!-- End Hero Banner -->
-    
+
 <!-- Start Visi Misi ============================================= -->
 <div style="position: absolute; z-index: -1; margin-top: -70px;"></div>
 <div class="featured-courses-area left-details default-padding" id="visi-misi">
@@ -289,8 +289,8 @@
                 <div class="item">
                     <div class="col-md-5">
                         <div class="thumb">
-                            <img 
-                                class="lazy" 
+                            <img
+                                class="lazy"
                                 {{-- src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20600'%3E%3C/svg%3E"  --}}
                                 src="{{ asset('assets/home/3.jpg') }}" alt=""
                             >
@@ -340,9 +340,9 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner text-light carousel-zoom">
                 <div class="item active">
-                    <div 
-                        class="slider-thumb bg-fixed lazy" 
-                        style="background-color: #3b82f6" 
+                    <div
+                        class="slider-thumb bg-fixed lazy"
+                        style="background-color: #3b82f6"
                         {{-- data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-04.webp)" --}}
                     >
                     </div>
@@ -352,9 +352,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="content">
-                                            <h3 data-animation="animated slideInLeft">TKJ</h3>                                                
-                                            <h1 data-animation="animated slideInUp">Teknik Jaringan Komputer</h1>       
-                                            <p data-animation="animated slideInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a adipisci molestias nesciunt maxime quidem cumque possimus fugiat nobis culpa eius, vitae sapiente, consectetur soluta amet, quisquam repudiandae. Officiis impedit aperiam earum maxime, deleniti odio officia reiciendis. Distinctio sint veniam est dolores, explicabo temporibus blanditiis necessitatibus debitis perferendis libero quod!</p>                              
+                                            <h3 data-animation="animated slideInLeft">TKJ</h3>
+                                            <h1 data-animation="animated slideInUp">Teknik Jaringan Komputer</h1>
+                                            <p data-animation="animated slideInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a adipisci molestias nesciunt maxime quidem cumque possimus fugiat nobis culpa eius, vitae sapiente, consectetur soluta amet, quisquam repudiandae. Officiis impedit aperiam earum maxime, deleniti odio officia reiciendis. Distinctio sint veniam est dolores, explicabo temporibus blanditiis necessitatibus debitis perferendis libero quod!</p>
                                         </div>
                                     </div>
                                 </div>
@@ -363,9 +363,9 @@
                     </div>
                 </div>
                 <div class="item ">
-                    <div 
-                        class="slider-thumb bg-fixed lazy" 
-                        style="background-color: #ffffff" 
+                    <div
+                        class="slider-thumb bg-fixed lazy"
+                        style="background-color: #ffffff"
                         {{-- data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-1.webp)" --}}
                     >
                     </div>
@@ -376,9 +376,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 style="color: black" data-animation="animated slideInLeft"></h3>                                                
-                                        <h1 style="color: black" data-animation="animated slideInUp">Keperawatan</h1>      
-                                        <p style="color: black" data-animation="animated slideInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a adipisci molestias nesciunt maxime quidem cumque possimus fugiat nobis culpa eius, vitae sapiente, consectetur soluta amet, quisquam repudiandae. Officiis impedit aperiam earum maxime, deleniti odio officia reiciendis. Distinctio sint veniam est dolores, explicabo temporibus blanditiis necessitatibus debitis perferendis libero quod!</p>                                                       
+                                        <h3 style="color: black" data-animation="animated slideInLeft"></h3>
+                                        <h1 style="color: black" data-animation="animated slideInUp">Keperawatan</h1>
+                                        <p style="color: black" data-animation="animated slideInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a adipisci molestias nesciunt maxime quidem cumque possimus fugiat nobis culpa eius, vitae sapiente, consectetur soluta amet, quisquam repudiandae. Officiis impedit aperiam earum maxime, deleniti odio officia reiciendis. Distinctio sint veniam est dolores, explicabo temporibus blanditiis necessitatibus debitis perferendis libero quod!</p>
                                     </div>
                                 </div>
                             </div>
@@ -387,9 +387,9 @@
                     </div>
                 </div>
                 <div class="item ">
-                    <div 
-                        class="slider-thumb bg-fixed lazy" 
-                        style="background-color: #f97316" 
+                    <div
+                        class="slider-thumb bg-fixed lazy"
+                        style="background-color: #f97316"
                         {{-- data-bg="url(https://sman5kotabekasi.sch.id/wp-content/uploads/2022/04/hero-1.webp)" --}}
                     >
                     </div>
@@ -399,9 +399,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-                                        <h3 data-animation="animated slideInLeft">TKR</h3>                                                
-                                        <h1 data-animation="animated slideInUp">Teknik Kendaraan Ringan</h1>                      
-                                        <p data-animation="animated slideInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a adipisci molestias nesciunt maxime quidem cumque possimus fugiat nobis culpa eius, vitae sapiente, consectetur soluta amet, quisquam repudiandae. Officiis impedit aperiam earum maxime, deleniti odio officia reiciendis. Distinctio sint veniam est dolores, explicabo temporibus blanditiis necessitatibus debitis perferendis libero quod!</p>         
+                                        <h3 data-animation="animated slideInLeft">TKR</h3>
+                                        <h1 data-animation="animated slideInUp">Teknik Kendaraan Ringan</h1>
+                                        <p data-animation="animated slideInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa a adipisci molestias nesciunt maxime quidem cumque possimus fugiat nobis culpa eius, vitae sapiente, consectetur soluta amet, quisquam repudiandae. Officiis impedit aperiam earum maxime, deleniti odio officia reiciendis. Distinctio sint veniam est dolores, explicabo temporibus blanditiis necessitatibus debitis perferendis libero quod!</p>
                                     </div>
                                 </div>
                             </div>
@@ -518,7 +518,7 @@
             </div>
         </div>
     </div>
-</div>    
+</div>
 <!-- End Sejarah -->
 
 <!-- Start Contact Info ============================================= -->
@@ -538,7 +538,7 @@
                     <div class="f-item">
                         <h3>Letak Peta</h3>
                         <div>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1994.3171507913742!2d125.0219328!3d1.3958897!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32870fd2c683e499%3A0x9a26f8a1e9a62ab8!2sSMK%20ADVENT%20KAIMA!5e0!3m2!1sid!2sid!4v1668501762806!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                       
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1994.3171507913742!2d125.0219328!3d1.3958897!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32870fd2c683e499%3A0x9a26f8a1e9a62ab8!2sSMK%20ADVENT%20KAIMA!5e0!3m2!1sid!2sid!4v1668501762806!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -547,19 +547,19 @@
                         <h3>Alamat</h3>
                         <ul style="color: #000">
                             <li>
-                                <i class="fas fas fa-mobile-alt" style="border-color: #000; color: #000"></i> 
+                                <i class="fas fas fa-mobile-alt" style="border-color: #000; color: #000"></i>
                                 <p style="color: #000">Telepon <span><a href="tel:{{ $setting->telepon }}" style="color: #000">{{ $setting->telepon }}</a></span></p>
                             </li>
                             <li>
-                                <i class="fa fa-envelope" style="border-color: #000; color: #000"></i> 
+                                <i class="fa fa-envelope" style="border-color: #000; color: #000"></i>
                                 <p style="color: #000">Email <span><a href="mailto:{{ $setting->email }}" style="color: #000">{{ $setting->email }}</a></span></p>
                             </li>
                             <li>
-                                <i class="fa fa-map" style="border-color: #000; color: #000"></i> 
+                                <i class="fa fa-map" style="border-color: #000; color: #000"></i>
                                 <p style="color: #000">Sekolah <span style="text-transform: capitalize !important;" style="color: #000">{{ $setting->alamat }}</span></p>
                             </li>
                             <li>
-                                <i class="fab fa-facebook-f" style="border-color: #000; color: #000"></i> 
+                                <i class="fab fa-facebook-f" style="border-color: #000; color: #000"></i>
                                 <p style="color: #000">Facebook <span><a href="https://www.facebook.com/Skavenka/" style="text-transform: capitalize !important; color: #000">SMK Advent Kaima "Skavenka"</a></span></p>
                             </li>
                         </ul>
@@ -638,7 +638,7 @@
                 } else if( link.attachEvent ){
                     link.detachEvent( "onload", enableStylesheet );
                 }
-                link.setAttribute( "onload", null ); 
+                link.setAttribute( "onload", null );
                 link.media = finalMedia;
             }
 
@@ -746,7 +746,7 @@
 Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
 
 Object Caching 0/1414 objects using memcached
-Page Caching using disk: enhanced 
+Page Caching using disk: enhanced
 Lazy Loading
 Database Caching using redis (Request-wide modification query)
 

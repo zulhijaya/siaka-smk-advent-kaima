@@ -15,6 +15,9 @@
                     <h3 class="box-title">Tagihan</h3>
                 </div>
 
+                @php
+                    $siswa = auth()->user()->siswa->load('tagihan');
+                @endphp
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-6">
@@ -22,7 +25,7 @@
                                 <tbody>
                                     <tr>
                                         <th>Total Tagihan</th>
-                                        <td>Rp{{ number_format(auth()->user()->siswa->tagihan->total, 0, '.', '.') }}</td>
+                                        <td>@if( $siswa->tagihan ) Rp{{ number_format($siswa->tagihan->total, 0, '.', '.') }} @else 0 @endif</td>
                                     </tr>
                                 </tbody>
                             </table>
