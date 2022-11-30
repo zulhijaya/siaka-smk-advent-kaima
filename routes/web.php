@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
@@ -29,6 +30,12 @@ use App\Http\Controllers\Guru\AbsensiController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/storage', function () {
+    Artisan::call('storage:link');
+
+    return 'ok';
+});
 
 Route::get('redirect', [UserController::class, 'redirect']);
 

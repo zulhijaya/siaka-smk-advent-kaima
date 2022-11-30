@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ config('app.name') }} - Pendaftaran Calon Siswa Baru</title>   
+    <title>{{ config('app.name') }} - Pendaftaran Calon Siswa Baru</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -35,7 +35,7 @@
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                     <span class="sr-only">Toggle navigation</span>
                 </a>
-        
+
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- User Account: style can be found in dropdown.less -->
@@ -63,7 +63,7 @@
             </section>
             <!-- /.sidebar -->
         </aside>
-    
+
         <div class="content-wrapper">
             <section class="content">
                 @if( session('status') )
@@ -168,7 +168,11 @@
                                     </div>
                                     <div class="form-group @error('kebutuhan_khusus') has-error @enderror">
                                         <label for="kebutuhan_khusus">Kebutuhan Khusus</label>
-                                        <input type="text" class="form-control" name="kebutuhan_khusus" id="kebutuhan_khusus" value="{{ old('kebutuhan_khusus') }}">
+                                        <select class="form-control" name="kebutuhan_khusus" id="kebutuhan_khusus">
+                                            <option value="" @if( old('kebutuhan_khusus') == '' ) selected @endif></option>
+                                            <option value="Iya" @if( old('kebutuhan_khusus') == 'Iya' ) selected @endif>Iya</option>
+                                            <option value="Tidak" @if( old('kebutuhan_khusus') == 'Tidak' ) selected @endif>Tidak</option>
+                                        </select>
                                         @error('kebutuhan_khusus') <span class="help-block">{{ $message }}</span> @enderror
                                     </div>
                                     <div class="form-group @error('alamat') has-error @enderror">
@@ -233,7 +237,11 @@
                                     </div>
                                     <div class="form-group @error('kebutuhan_khusus_ayah') has-error @enderror">
                                         <label for="kebutuhan_khusus_ayah">Kebutuhan Khusus Ayah</label>
-                                        <input type="text" class="form-control" name="kebutuhan_khusus_ayah" id="kebutuhan_khusus_ayah" value="{{ old('kebutuhan_khusus_ayah') }}">
+                                        <select class="form-control" name="kebutuhan_khusus_ayah" id="kebutuhan_khusus_ayah">
+                                            <option value="" @if( old('kebutuhan_khusus_ayah') == '' ) selected @endif></option>
+                                            <option value="Iya" @if( old('kebutuhan_khusus_ayah') == 'Iya' ) selected @endif>Iya</option>
+                                            <option value="Tidak" @if( old('kebutuhan_khusus_ayah') == 'Tidak' ) selected @endif>Tidak</option>
+                                        </select>
                                         @error('kebutuhan_khusus_ayah') <span class="help-block">{{ $message }}</span> @enderror
                                     </div>
                                     <div class="form-group @error('pekerjaan_ayah') has-error @enderror">
@@ -258,7 +266,11 @@
                                     </div>
                                     <div class="form-group @error('kebutuhan_khusus_ibu') has-error @enderror">
                                         <label for="kebutuhan_khusus_ibu">Kebutuhan Khusus Ibu</label>
-                                        <input type="text" class="form-control" name="kebutuhan_khusus_ibu" id="kebutuhan_khusus_ibu" value="{{ old('kebutuhan_khusus_ibu') }}">
+                                        <select class="form-control" name="kebutuhan_khusus_ibu" id="kebutuhan_khusus_ibu">
+                                            <option value="" @if( old('kebutuhan_khusus_ibu') == '' ) selected @endif></option>
+                                            <option value="Iya" @if( old('kebutuhan_khusus_ibu') == 'Iya' ) selected @endif>Iya</option>
+                                            <option value="Tidak" @if( old('kebutuhan_khusus_ibu') == 'Tidak' ) selected @endif>Tidak</option>
+                                        </select>
                                         @error('kebutuhan_khusus_ibu') <span class="help-block">{{ $message }}</span> @enderror
                                     </div>
                                     <div class="form-group @error('pekerjaan_ibu') has-error @enderror">
@@ -362,7 +374,7 @@
                                     </div>
                                 </div>
                             </div>
-            
+
                             <div class="box-footer">
                                 <div class="pull-right btn-toolbar">
                                     <button type="submit" class="btn btn-primary">Kirim</button>
@@ -374,13 +386,15 @@
                 @endif
             </section>
         </div>
-    
-        @include('layouts/admin/footer')
-    </div>  
 
+        @include('layouts/admin/footer')
+    </div>
+
+    <script src="{{ asset('adminlte/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('adminlte/bower_components/fastclick/lib/fastclick.js') }}"></script>
     <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
+
     @stack('scripts')
 </body>
 

@@ -169,8 +169,12 @@
                             </ul>
                         </li>
                         @guest
-                        <li>
-                            <a class="smooth-menu" href="{{ route('calon-siswa.tambah') }}">CALON SISWA</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown">PENDAFTARAN</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="smooth-menu" href="#">Need to Know!</a></li>
+                                <li><a class="smooth-menu" href="{{ route('calon-siswa.tambah') }}">Pengisian Formulir</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a class="smooth-menu" href="{{ route('login') }}">LOGIN</a>

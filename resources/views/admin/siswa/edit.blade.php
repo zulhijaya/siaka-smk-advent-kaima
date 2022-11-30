@@ -99,7 +99,11 @@
                         </div>
                         <div class="form-group @error('kebutuhan_khusus') has-error @enderror">
                             <label for="kebutuhan_khusus">Kebutuhan Khusus</label>
-                            <input type="text" class="form-control" name="kebutuhan_khusus" id="kebutuhan_khusus" value="{{ $siswa->kebutuhan_khusus }}">
+                            <select class="form-control" name="kebutuhan_khusus" id="kebutuhan_khusus">
+                                <option value="" @if( !$siswa->kebutuhan_khusus ) selected @endif></option>
+                                <option value="Iya" @if( $siswa->kebutuhan_khusus == 'Iya' ) selected @endif>Iya</option>
+                                <option value="Tidak" @if( $siswa->kebutuhan_khusus == 'Tidak' ) selected @endif>Tidak</option>
+                            </select>
                             @error('kebutuhan_khusus') <span class="help-block">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-group @error('alamat') has-error @enderror">
@@ -164,7 +168,11 @@
                         </div>
                         <div class="form-group @error('kebutuhan_khusus_ayah') has-error @enderror">
                             <label for="kebutuhan_khusus_ayah">Kebutuhan Khusus Ayah</label>
-                            <input type="text" class="form-control" name="kebutuhan_khusus_ayah" id="kebutuhan_khusus_ayah" value="{{ $siswa->kebutuhan_khusus_ayah }}">
+                            <select class="form-control" name="kebutuhan_khusus_ayah" id="kebutuhan_khusus_ayah">
+                                <option value="" @if( !$siswa->kebutuhan_khusus_ayah ) selected @endif></option>
+                                <option value="Iya" @if( $siswa->kebutuhan_khusus_ayah == 'Iya' ) selected @endif>Iya</option>
+                                <option value="Tidak" @if( $siswa->kebutuhan_khusus_ayah == 'Tidak' ) selected @endif>Tidak</option>
+                            </select>
                             @error('kebutuhan_khusus_ayah') <span class="help-block">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-group @error('pekerjaan_ayah') has-error @enderror">
@@ -189,7 +197,11 @@
                         </div>
                         <div class="form-group @error('kebutuhan_khusus_ibu') has-error @enderror">
                             <label for="kebutuhan_khusus_ibu">Kebutuhan Khusus Ibu</label>
-                            <input type="text" class="form-control" name="kebutuhan_khusus_ibu" id="kebutuhan_khusus_ibu" value="{{ $siswa->kebutuhan_khusus_ibu }}">
+                            <select class="form-control" name="kebutuhan_khusus_ibu" id="kebutuhan_khusus_ibu">
+                                <option value="" @if( !$siswa->kebutuhan_khusus_ibu ) selected @endif></option>
+                                <option value="Iya" @if( $siswa->kebutuhan_khusus_ibu == 'Iya' ) selected @endif>Iya</option>
+                                <option value="Tidak" @if( $siswa->kebutuhan_khusus_ibu == 'Tidak' ) selected @endif>Tidak</option>
+                            </select>
                             @error('kebutuhan_khusus_ibu') <span class="help-block">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-group @error('pekerjaan_ibu') has-error @enderror">
